@@ -1,0 +1,404 @@
+<html lang="en">
+
+<head>
+    <meta name="google-site-verification" content="ftFOlJETX-2KNjaPh8W6s8lhigItRuu9fOmjHZZ0nY0">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>A-FRCNN</title>
+    <style type="text/css">
+        table {
+            width: 100%;
+            table-layout: fixed;
+        }
+        
+        audio {
+            width: 100%;
+        }
+        
+        thead>tr>th:first-child {
+            width: 96px;
+        }
+        
+        @media (max-width: 767px) {
+            .big-screen {
+                display: none;
+            }
+        }
+        
+        @media (min-width: 767px) {
+            .small-screen {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+
+<body data-gr-c-s-loaded="true">
+    <header class="header">
+        <div class="jumbotron bg-dark text-center">
+            <div class="container ">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <h2><a class="text-light">
+                                                        Singing Voice Separation from Music Using Additional Repeat Features from Accompaniment</a></h2>
+                        <p>
+                        </p>
+                        <p>
+                        </p>
+                        <div class="row">
+                            <div class="col-md col-sm-12">
+                                <a class="text-light" href="#">Hanyu Meng<sup></a>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="col-md col-sm-12"><a class="text-light" href="#">
+                                School of Electrical Engineering and Telecommunications, University of New South Wales, Sydney, Australia</a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <p></p>
+                    <div class="row">
+                    </div>
+                    <p></p>
+
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <div class="container">
+        <div class="row" id="result">
+            <div class="col-md-12">
+                <h2>Music Samples</h2>
+                <hr>
+                <p>The model is evaluated with MUSDB18 test set [<a class="text-success" href="#1">1</a>], the following are five representative genres of music in the dataset:
+                </p>
+                <table class="table table-responsive">
+                    <thead class="w-100">
+                        <tr style="border-top:1px solid black" class="text-center">
+                            <th style="width: 180px;">Mixture input</th>
+                            <th style="width: 180px;">Open-Unmix (Baseline)<sup><a class="text-success"
+                                                                                href="#2">2</a></sup></th>
+                            <th style="width: 180px;">Open-REPET<sup><a class="text-success"
+                                                                                href="#3">3</a></sup></th>
+                            <th style="width: 180px;">Open-Unmix-log_l1<sup><a
+                                                                                class="text-success"
+                                                                                href="#4">4</a></sup></th>
+                            <th style="width: 180px;">Open-REPET-log_l1<sup><a
+                                                                                class="text-success"
+                                                                                href="#5">5</a></sup></th>
+                            <th style="width: 180px;">Ground-Truth</th>
+                        </tr>
+                    </thead>
+                    <tbody class="w-100">
+                        <tr style="border-top:1px solid black">
+                            <td scope="row" rowspan="2"><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./mix/1.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-Unmix/vocals/1.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-REPET/vocals/1.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-Unmix-log_l1/vocals/1.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-REPET-log_l1/vocals/1.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Ground-Truth/vocals/1.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                        </tr>
+                        <tr style="border-top:1px solid black">
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-Unmix/accompaniment/1.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-REPET/accompaniment/1.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-Unmix-log_l1/accompaniment/1.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-REPET-log_l1/accompaniment/1.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Ground-Truth/accompaniment/1.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                        </tr>
+
+
+
+                        <tr style="border-top:1px solid black">
+                            <td scope="row" rowspan="2"><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./mix/2.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-Unmix/vocals/2.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-REPET/vocals/2.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-Unmix-log_l1/vocals/2.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-REPET-log_l1/vocals/2.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Ground-Truth/vocals/2.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                        </tr>
+                        <tr style="border-top:1px solid black">
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-Unmix/accompaniment/2.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-REPET/accompaniment/2.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-Unmix-log_l1/accompaniment/2.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-REPET-log_l1/accompaniment/2.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Ground-Truth/accompaniment/2.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                        </tr>
+
+
+
+                        <tr style="border-top:1px solid black">
+                            <td scope="row" rowspan="2"><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./mix/3.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-Unmix/vocals/3.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-REPET/vocals/3.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-Unmix-log_l1/vocals/3.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-REPET-log_l1/vocals/3.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Ground-Truth/vocals/3.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                        </tr>
+                        <tr style="border-top:1px solid black">
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-Unmix/accompaniment/3.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-REPET/accompaniment/3.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-Unmix-log_l1/accompaniment/3.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-REPET-log_l1/accompaniment/3.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="/Ground-Truth/accompaniment/3.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                        </tr>
+
+
+                        <tr style="border-top:1px solid black">
+                            <td scope="row" rowspan="2"><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./mix/4.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-Unmix/vocals/4.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-REPET/vocals/4.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-Unmix-log_l1/vocals/4.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-REPET-log_l1/vocals/4.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Ground-Truth/vocals/4.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                        </tr>
+                        <tr style="border-top:1px solid black">
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-Unmix/accompaniment/4.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-REPET/accompaniment/4.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-Unmix-log_l1/accompaniment/4.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-REPET-log_l1/accompaniment/4.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Ground-Truth/accompaniment/4.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                        </tr>
+
+
+                        <tr style="border-top:1px solid black">
+                            <td scope="row" rowspan="2"><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./mix/5.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-Unmix/vocals/5.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-REPET/vocals/5.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-Unmix-log_l1/vocals/5.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-REPET-log_l1/vocals/5.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Ground-Truth/vocals/5.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                        </tr>
+                        <tr style="border-top:1px solid black">
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-Unmix/accompaniment/5.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-REPET/accompaniment/5.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-Unmix-log_l1/accompaniment/5.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Open-REPET-log_l1/accompaniment/5.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                            <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                                                                        <source src="./Ground-Truth/accompaniment/5.wav"
+                                                                                type="audio/wav">
+                                                                </audio></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+        <hr>
+        <div class="row" id="ref">
+            <div class="col">
+                <h2>Material</h2>
+                <div class="col-sm-12" style="padding-left: 0px">
+                    <a class="text-dark" href="#" style="margin-right: 10px;">
+                        <font size="4">[Main]</font>
+                    </a>
+                    <a class="text-dark" href="#" style="margin-right: 10px;">
+                        <font size="4">[Supp]</font>
+                    </a>
+                    </a>
+                    <a class="text-dark" href="https://github.com/Hanyu-Meng/Thesis" style="margin-right: 10px;">
+                        <font size="4">[Code]</font>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="ref">
+            <div class="col">
+                <h2>References</h2>
+                <div>
+                    <p>
+                        <a name="1">[1]</a> Rafii, Zafar, et al. "MUSDB18-a corpus for music separation." (2017).
+                    </p>
+                    <p>
+                        <a name="2">[2]</a> Stöter, Fabian-Robert, et al. "Open-unmix-a reference implementation for music source separation." Journal of Open Source Software 4.41 (2019): 1667.
+
+                    </p>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+    </script>
+
+
+</body>
+
+</html>
